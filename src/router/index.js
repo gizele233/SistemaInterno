@@ -1,5 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import telaUsuario from '@/components/telaUsuario.vue'
+import usuarioEdit from '@/components/usuarioEdit.vue'
+import usuarioAlterSenha from '@/components/usuarioAlterSenha.vue'
+import telaSistema from '@/components/telaSistema.vue'
+import telaGrupo from '@/components/telaGrupo.vue'
 import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
@@ -11,14 +16,29 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/About.vue')
-    }
+    path: '/usuario',
+    name: 'telaUsuario',
+    component: telaUsuario
+  },
+  {
+    path: '/editarusuario',
+    name: 'usuarioEdit',
+    component: usuarioEdit
+  },
+  {
+    path: '/alterarsenha',
+    name: 'usuarioAlterSenha',
+    component: usuarioAlterSenha
+  },
+  {
+    path: '/sistema',
+    name: 'telaSistema',
+    component: telaSistema
+  },
+  {
+    path: '/grupo',
+    name: 'telaGrupo',
+    component: telaGrupo
   }
 ]
 

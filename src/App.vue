@@ -1,32 +1,36 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div id="app">   
+    <b-card style="margin-bottom:10px" title="Card Title" no-body>
+      <b-navbar class="color-nav">
+        <b-navbar-nav inline >
+          <b-nav-item href="#" active>Home</router-link></b-nav-item>
+          <b-nav-item :to="{name:'telaUsuario'}" active>Usuário</b-nav-item>
+          <b-nav-item :to="{name:'telaSistema'}" active>Sistema</b-nav-item>
+          <b-nav-item :to="{name:'#'}">Sair</b-nav-item>
+            <b-button class="icon-acao button-sair">
+              <b-icon icon="x" aria-hidden="true"></b-icon>
+            </b-button>
+          
+        </b-navbar-nav>
+      </b-navbar>
+    </b-card>   
     <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style scoped>
+  .color-nav{
+    background: #F7F7F7;
+    color: black;
+  }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  .button-sair{
+    margin-left: 448%;
+  }
+  @media (max-width: 360px) {
+    .button-sair{
+      margin-left: 30%;
+    }
+  }
+ 
 </style>
