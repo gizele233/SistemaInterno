@@ -34,7 +34,7 @@
                 ></b-form-input>
             </b-form-group>
             <b-form-group >
-                <b-button class="mb-3 search-button" type="submit" id="search"><b-icon icon="search" aria-hidden="true" ></b-icon></b-button> 
+                <b-button variant="outline-primary" class="mb-3 search-button" type="submit" id="search"><b-icon icon="search" aria-hidden="true" ></b-icon></b-button> 
             </b-form-group>
         </b-form>
 
@@ -79,7 +79,11 @@ export default {
           { código: 89, matricula: 20144, Nome: 'Maria', Setor: 'SUDEC'},
           { código: 38, matricula: 20144, Nome: 'Camila', Setor: 'SUDEC'}
         ]
-        ,fields : [{key:"matricula",label:"Matrícula"},{key:"Nome",label:"Nome"},{key:"Acoes", label:"Ações"}]
+        ,fields : [
+          {key:"matricula",label:"Matrícula"},
+          {key:"Nome",label:"Nome"},
+          {key:"Acoes", label:"Ações"}
+        ]
       }
     }  
 }

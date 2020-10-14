@@ -31,21 +31,20 @@
             <b-form-group
             label-cols-sm="0"
             label="Alterar Senha:"
-            label-for="Matrícula:"
+            class=" mt-3"
             > </b-form-group>
-
-            <b-form-group class="col">
-            <b-form-input class="col-12 container-senha" id="input-sm" size="sm" placeholder="Nova senha"></b-form-input><br> 
-            <b-form-input class="col-12 container-senha" id="input-sm" size="sm" placeholder="Repita a nova senha"></b-form-input>
-            </b-form-group>
-
-            <b-form-group inline class="col">
-                <b-button variant="primary" class="mb-0 container-botao" type="submit" id="search">Salvar</b-button>
-                <router-link to="/usuario">
-                    <b-button variant="primary" class="mb-0 container-botao" type="submit" id="search">Voltar</b-button>
-                </router-link>     
-            </b-form-group>
         </b-form>
+        <b-form-group class="col">
+            <b-form-input class="col-3 mb-4 mt-3" id="input-sm" placeholder="Nova senha"></b-form-input> 
+            <b-form-input class="col-3 mb-4" id="input-sm" placeholder="Repita a nova senha"></b-form-input> 
+        </b-form-group>
+
+        <b-form-group inline class="col">
+            <b-button variant="primary" class="mr-2" type="submit" id="search">Salvar</b-button>
+            <router-link to="/usuario">
+                <b-button variant="primary" class="mb-0" type="submit" id="search">Voltar</b-button>
+            </router-link>     
+        </b-form-group>
         
     </b-card>  
     </div>
@@ -63,8 +62,5 @@ export default {
     }
     .container-senha{
         margin: 2% 0% 0.1% 0;
-    }
-    .container-botao{
-        margin: 3% 1% 0 0;
     }
 </style>

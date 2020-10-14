@@ -4,8 +4,9 @@ import telaUsuario from '@/components/telaUsuario.vue'
 import usuarioEdit from '@/components/usuarioEdit.vue'
 import usuarioAlterSenha from '@/components/usuarioAlterSenha.vue'
 import telaSistema from '@/components/telaSistema.vue'
-import telaGrupo from '@/components/telaGrupo.vue'
 import Home from '../views/Home.vue'
+import sistemaEdit from '@/components/sistemaEdit.vue'
+import visualizarGrupos from '@/components/visualizarGrupos.vue'
 
 Vue.use(VueRouter)
 
@@ -36,10 +37,16 @@ const routes = [
     component: telaSistema
   },
   {
-    path: '/grupo',
-    name: 'telaGrupo',
-    component: telaGrupo
+    path: '/editarsistema',
+    name: 'sistemaEdit',
+    component: sistemaEdit
+  },
+  {
+    path: '/visualizargrupo',
+    name: 'visualizarGrupos',
+    component: visualizarGrupos
   }
+  
 ]
 
 const router = new VueRouter({

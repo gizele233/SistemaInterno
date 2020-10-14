@@ -1,6 +1,5 @@
 <template>
     <div style="padding:10px">
-
     <b-card header="Editar Grupos" style="margin-bottom:10px">
         <b-form inline >
             <b-form-group
@@ -44,14 +43,14 @@
             <b-table sticky-header hover :items="items" :fields="fields" head-variant = "light">  
                 <template v-slot:cell(Remover)>
                     <b-button variant="danger" class="icon-acao">
-                    <b-icon icon="trash-fill" aria-hidden="true"></b-icon>
+                    <b-icon icon="x" aria-hidden="true"></b-icon>
                     </b-button>
                 </template>
             </b-table> 
         </div>
         <div>
             <b-form-group class="col">
-                <b-button variant="primary" class="mb-0 container-botao" type="submit" id="search">Salvar</b-button>
+                <b-button variant="primary" class="mr-2" type="submit" id="search">Salvar</b-button>
                 <router-link to="/usuario">
                     <b-button variant="primary" class="mb-0" type="submit" id="search">Voltar</b-button>
                 </router-link>     
@@ -101,9 +100,6 @@ export default {
 <style scoped>
 .container-info{
     padding: 0 0 1% 0;
-}
-.container-botao{
-    margin: 0% 1% 0 0%;
 }
 .container-select{
     margin: 0 0% 1% 2%;

@@ -3,28 +3,47 @@
 
     <b-card header="Sistemas" style="margin-bottom:10px">
         <b-form inline>
+            <b-form-group
+                
+                label="Nome:"
+                label-for="filterInput" 
+                id="field"
+                class="form-field"
+                label-cols-lg="2" 
+            >
+                <b-form-input
+                        variant="light"
+                        v-model="filter"
+                        type="search"
+                        class="mb-1"
+                />
+            </b-form-group> 
             <b-form-group >
-                <b-button variant="primary" class="mb-4 search-botton" type="submit" id="search">Adicionar Sistema</b-button> 
+                <b-button variant="outline-primary" class="mb-3 search-button" type="submit" id="search"><b-icon icon="search" aria-hidden="true" ></b-icon></b-button> 
             </b-form-group>
         </b-form>
 
+        <router-link to="/editarsistema">
+            <b-button variant="primary" class="w-10 mb-4 mt-4" type="submit" id="search">Adicionar Sistema</b-button>
+        </router-link>
+        
         <div>
             <b-table sticky-header hover :items="items" :fields="fields" head-variant = "light">
                 
             <template v-slot:cell(Acoes)>
-                <router-link to="">
+                <router-link to="/editarsistema">
                     <b-button variant="primary" class="icon-acao">
                     <b-icon icon="pencil" aria-hidden="true"></b-icon>
                     </b-button>
                 </router-link>
-                <router-link to="">
-                    <b-button variant="primary" class="icon-acao">
+                <router-link to="/visualizargrupo">
+                    <b-button variant="secondary" class="icon-acao">
                     <b-icon icon="eye" aria-hidden="true"></b-icon>
                     </b-button>
                 </router-link>
                 <router-link to="">
                     <b-button variant="danger" class="icon-acao">
-                    <b-icon icon="x" aria-hidden="true"></b-icon>
+                    <b-icon icon="trash-fill" aria-hidden="true"></b-icon>
                     </b-button>
                 </router-link>
             </template>
@@ -56,5 +75,34 @@ export default {
 <style>
     .icon-acao{
         margin: 0 0.5% 0% 0;
+    }
+    header{
+        text-align: left;
+    }
+    .form-field{
+        padding: 0 1% 1% 0;
+    }
+    .icon-acao{
+        margin: 0 0.5% 0% 0;
+    }
+    @media (max-width: 400px) {
+        .search-button{
+            margin-top: 120%;
+        }
+    }
+    @media (max-width: 578px) {
+        .search-button{
+            margin-top:115%;
+        }
+    }
+    @media (max-width: 630px) {
+        .search-button{
+            margin-top:60%;
+        }
+    }
+    @media (max-width: 992px) {
+        .search-button{
+            margin-top:105%;
+        }
     }
 </style>
