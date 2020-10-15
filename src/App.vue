@@ -3,7 +3,7 @@
     <b-card style="margin-bottom:10px" title="Card Title" class="font-weight-bold" no-body>
       <b-navbar class="color-nav">
         <b-navbar-nav inline >
-          <b-nav-item href="#" >Home</b-nav-item>
+          <b-nav-item href="/" >Home</b-nav-item>
           <b-nav-item :to="{name:'telaUsuario'}">Usuário</b-nav-item>
           <b-nav-item :to="{name:'telaSistema'}">Sistema</b-nav-item>
           <b-nav-item :to="{name:'#'}">Sair</b-nav-item> 

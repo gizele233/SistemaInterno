@@ -27,17 +27,27 @@
             ></b-form-group>
         </b-form>
 
-        <b-form inline >
-            <b-form-group
-            label-cols-sm="0"
-            label="Alterar Senha:"
-            class=" mt-3"
-            > </b-form-group>
-        </b-form>
-        <b-form-group class="col">
-            <b-form-input class="col-3 mb-4 mt-3" id="input-sm" placeholder="Nova senha"></b-form-input> 
-            <b-form-input class="col-3 mb-4" id="input-sm" placeholder="Repita a nova senha"></b-form-input> 
-        </b-form-group>
+        
+        <b-form inline class="mt-4">
+                <b-form-group class="col">
+                    <b-form-group
+                        label-cols-lg="0"
+                        label-for="filterInput" 
+                        id="field"
+                        label="Nova senha:"
+                    > </b-form-group>
+                    <b-form-input style="width: 300px" class="xs-12 col-9 mb-4" id="input-sm" size="5"></b-form-input>
+
+                    <b-form-group
+                        label-cols-lg="0"
+                        label="Repita a nova senha:"
+                        label-for="filterInput" 
+                        id="field"
+                    > </b-form-group>
+                    <b-form-input style="width: 300px" class="xs-12 col-9 mb-4" id="input-sm"></b-form-input>
+                </b-form-group>
+                
+            </b-form>
 
         <b-form-group inline class="col">
             <b-button variant="primary" class="mr-2" type="submit" id="search">Salvar</b-button>

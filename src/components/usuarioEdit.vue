@@ -3,43 +3,43 @@
     <b-card header="Editar Grupos" style="margin-bottom:10px">
         <b-form inline >
             <b-form-group
-            label-cols-sm="11"
-            label="Nome:"
-            label-for="Nome"
+                label-cols-sm="11"
+                label="Nome:"
+                label-for="Nome"
             ></b-form-group>
-        </b-form>
-        <b-form inline class="container-info">
+            </b-form>
+            <b-form inline class="container-info">
             <b-form-group
-            label-cols-sm="11"
-            label="Matrícula:"
-            label-for="Matrícula:"
-            ></b-form-group>
-        </b-form>
-        <div>
-             <b-form inline >
-            <b-form-group
-            class="label-select"
-            label-cols-sm="13"
-            label="Sistema:"
-            label-for="Sistema"
-            ></b-form-group>
-            
-            <b-form-group
-            class="label-select"
-            label-cols-mb="0"
-            label="Grupo:"
-            label-for="Grupo"
+                label-cols-sm="11"
+                label="Matrícula:"
+                label-for="Matrícula:"
             ></b-form-group>
         </b-form>
 
+        <div>
             <b-form inline >
-                <b-form-select class="container-select" v-model="sistema" :options="sistema"></b-form-select>
-                <b-form-select class="container-select" v-model="grupo" :options="grupo"></b-form-select>
-                <b-button variant="primary" class="container-select" type="submit" id="search">Adicionar</b-button>
-            </b-form>
+            <b-form-group
+                class="label-select"
+                label-cols-sm="0"
+                label="Sistema:"
+                label-for="filterInput"
+            >
+            <b-form-select class="container-select" v-model="sistema" :options="sistema"></b-form-select>
+            </b-form-group>
+            
+            <b-form-group
+                class="label-select"
+                label-cols-mb="0"
+                label="Grupo:"
+                label-for="filterInput"
+            >
+            <b-form-select class="container-select" v-model="grupo" :options="grupo"></b-form-select>
+            </b-form-group>
+            <b-button variant="primary" class="container-select" type="submit" id="search">Adicionar</b-button>
+        </b-form>
             
         </div>
-        <div>
+        <div class="mt-3">
             <b-table sticky-header hover :items="items" :fields="fields" head-variant = "light">  
                 <template v-slot:cell(Remover)>
                     <b-button variant="danger" class="icon-acao">

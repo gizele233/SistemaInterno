@@ -1,20 +1,26 @@
 <template>
     <div style="padding:10px">
         <b-card header="Editar Sistema" style="margin-bottom:10px">
-            <b-form-group class="col">
-                <b-form-group
-                    label-cols-sm="0"
-                    label="Nome:"
-                > </b-form-group>
-                <b-form-input class="col-3 mb-4" id="input-sm"></b-form-input>
+            <b-form inline>
+                <b-form-group class="col">
+                    <b-form-group
+                        label-cols-lg="0"
+                        label-for="filterInput" 
+                        id="field"
+                        label="Nome:"
+                    > </b-form-group>
+                    <b-form-input style="width: 300px" class="xs-12 col-9 mb-4" id="input-sm" size="5"></b-form-input>
 
-                <b-form-group
-                    label-cols-sm="0"
-                    label="Sigla:"
-                > </b-form-group>
-                <b-form-input class="col-3 mb-4" id="input-sm"></b-form-input>
-            </b-form-group>
-            
+                    <b-form-group
+                        label-cols-lg="0"
+                        label="Sigla:"
+                        label-for="filterInput" 
+                        id="field"
+                    > </b-form-group>
+                    <b-form-input style="width: 300px" class="xs-12 col-9 mb-4" id="input-sm"></b-form-input>
+                </b-form-group>
+                
+            </b-form>
             <div>
                 <b-form-group class="col">
                     <b-button variant="primary" class="mr-2" type="submit" id="search">Salvar</b-button>
@@ -35,16 +41,9 @@ export default {
 </script>
 
 <style scoped>
-    .container-info{
-        padding: 0 0 1% 0;
-    }
-    .container-select{
-        margin: 0 0% 1% 2%;
-    }
-    .label-select{
-        margin: 0 12% 1% 2%;
-    }
-    .container-senha{
-        margin: 2% 0% 0.1% 0;
+    @media (max-width: 400px) {
+        .form-input{
+            width: 300%;
+        }
     }
 </style>

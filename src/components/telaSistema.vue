@@ -9,7 +9,7 @@
                 label-for="filterInput" 
                 id="field"
                 class="form-field"
-                label-cols-lg="2" 
+                label-cols-lg="0" 
             >
                 <b-form-input
                         variant="light"
@@ -85,24 +85,13 @@ export default {
     .icon-acao{
         margin: 0 0.5% 0% 0;
     }
-    @media (max-width: 400px) {
+    .icon-acao{
+        margin: 0 0.5% 0% 0;
+    }
+    @media (max-width: 570px) {
         .search-button{
-            margin-top: 120%;
+            margin-top: 90%;
         }
     }
-    @media (max-width: 578px) {
-        .search-button{
-            margin-top:115%;
-        }
-    }
-    @media (max-width: 630px) {
-        .search-button{
-            margin-top:60%;
-        }
-    }
-    @media (max-width: 992px) {
-        .search-button{
-            margin-top:105%;
-        }
-    }
+    
 </style>

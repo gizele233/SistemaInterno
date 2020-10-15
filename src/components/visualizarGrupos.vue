@@ -27,14 +27,14 @@
                 ></b-form-group>
             </b-form>
 
-            <b-form inline class="mt-4">
+            <b-form inline class="mt-3">
                 <b-form-group
                     
                     label="Grupo:"
                     label-for="filterInput" 
                     id="field"
                     class="form-field"
-                    label-cols-lg="2" 
+                    label-cols-lg="0" 
                 >
                     <b-form-input
                             variant="light"
@@ -44,12 +44,12 @@
                     />
                 </b-form-group> 
                 <b-form-group >
-                    <b-button class="mb-3 search-button" variant="primary" type="submit" id="search">Adicionar</b-button> 
+                    <b-button class="mb-3 botaoteste" variant="primary" type="submit" id="search">Adicionar</b-button> 
                 </b-form-group>
             </b-form>
             
 
-            <div class="mt-4 mb-3">
+            <div class="mt-2 mb-3">
                 <b-table sticky-header hover :items="items" :fields="fields" head-variant = "light">
                     <template v-slot:cell(Remover)>
                         <b-button variant="danger" class="icon-acao">
@@ -60,7 +60,7 @@
             </div>
             <div>
                 <b-form-group class="col">
-                    <b-button variant="primary" class="mb-0 space-botao" type="submit" id="search">Salvar</b-button>
+                    <b-button variant="primary" class="mr-2" type="submit" id="search">Salvar</b-button>
                     <router-link to="/sistema">
                         <b-button variant="primary" class="mb-0" type="submit" id="search">Voltar</b-button>
                     </router-link>     
@@ -87,7 +87,9 @@ export default {
 </script>
 
 <style scoped>
-.space-botao{
-    margin: 0% 1% 0 0%;
-}
+    @media (max-width: 573px) {
+        .botaoteste{
+            margin-top: 40%;
+        }
+    }
 </style>
