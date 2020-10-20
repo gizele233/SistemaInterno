@@ -53,10 +53,10 @@
                  </router-link>
 
                  <b-button variant="danger" class="icon-acao">
-                <b-icon icon="trash-fill" aria-hidden="true"></b-icon>
+                    <b-icon icon="trash-fill" aria-hidden="true"></b-icon>
                 </b-button>
-            </template>
                 
+            </template>
             </b-table> 
         </div>
         
@@ -72,24 +72,21 @@ export default {
     data() {
       return {
         items: [
-          { código: 40, matricula: 20144, Nome: 'Gizele', Setor: 'SUDEC'},
-          { código: 21, matricula: 20144, Nome: 'João', Setor: 'SUDEC'},
-          { código: 89, matricula: 20144, Nome: 'Maria', Setor: 'SUDEC'},
-          { código: 38, matricula: 20144, Nome: 'Camila', Setor: 'SUDEC'}
+          { código: '', matricula: '', nome: '', Setor: ''},
+          { código: '', matricula: '', nome: '', Setor: ''},
+          { código: '', matricula: '', nome: '', Setor: ''},
+          { código: '', matricula: '', nome: '', Setor: ''}
         ]
         ,fields : [
           {key:"matricula",label:"Matrícula"},
-          {key:"Nome",label:"Nome"},
+          {key:"nome",label:"Nome"},
           {key:"Acoes", label:"Ações"}
         ]
       }
     },
     mounted(){
         Usuarios.listar().then(resposta => {
-            console.log(resposta.data)
-            this.items = resposta.data
-            
-    
+            this.items = resposta.data         
         })
     } 
 }
