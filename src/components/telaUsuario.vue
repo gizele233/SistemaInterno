@@ -13,7 +13,6 @@
             >
                 <b-form-input
                         variant="light"
-                        v-model="filter"
                         type="search"
                         class="mb-1"
                 />
@@ -28,7 +27,6 @@
                 >
                 <b-form-input
                         variant="light"
-                        v-model="filter"
                         type="search"
                         class="mb-1"
                 ></b-form-input>
@@ -69,8 +67,8 @@
 </template>
 
 <script>
+import Usuarios from '@/services/usuarios.js'
 export default {
-
     data() {
       return {
         items: [
@@ -85,7 +83,15 @@ export default {
           {key:"Acoes", label:"Ações"}
         ]
       }
-    }  
+    },
+    mounted(){
+        Usuarios.listar().then(resposta => {
+            console.log(resposta.data)
+            this.items = resposta.data
+            
+    
+        })
+    } 
 }
 </script>
 

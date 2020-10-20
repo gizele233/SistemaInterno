@@ -13,7 +13,6 @@
             >
                 <b-form-input
                         variant="light"
-                        v-model="filter"
                         type="search"
                         class="mb-1"
                 />

@@ -6,7 +6,7 @@
           <b-nav-item href="/" >Home</b-nav-item>
           <b-nav-item :to="{name:'telaUsuario'}">Usuário</b-nav-item>
           <b-nav-item :to="{name:'telaSistema'}">Sistema</b-nav-item>
-          <b-nav-item :to="{name:'#'}">Sair</b-nav-item> 
+          <b-nav-item :to="{name:''}">Sair</b-nav-item> 
         </b-navbar-nav>
       </b-navbar>
     </b-card>   
@@ -14,6 +14,8 @@
   </div>
 </template>
 
+
+</script>
 <style scoped>
   .color-nav{
     background: #F7F7F7;
