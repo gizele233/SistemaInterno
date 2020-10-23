@@ -6,14 +6,19 @@
                 label-cols-sm="11"
                 label="Nome:"
                 label-for="Nome"
-            ></b-form-group>
+            >
+       {{usuario.servidor.nome}}
+            </b-form-group>
             </b-form>
             <b-form inline class="container-info">
             <b-form-group
                 label-cols-sm="11"
                 label="Matrícula:"
                 label-for="Matrícula:"
-            ></b-form-group>
+            >
+              {{usuario.matricula}}
+            
+            </b-form-group>
         </b-form>
 
         <div>
@@ -40,7 +45,7 @@
             
         </div>
         <div class="mt-3">
-            <b-table sticky-header hover :items="items" :fields="fields" head-variant = "light">  
+            <b-table sticky-header hover :items="grupos" :fields="fields" head-variant = "light">  
                 <template v-slot:cell(Remover)>
                     <b-button variant="danger" class="icon-acao">
                     <b-icon icon="x" aria-hidden="true"></b-icon>
@@ -62,18 +67,17 @@
 </template>
 
 <script>
+import Usuarios from '@/services/usuarios.js'
+import Grupos from '@/services/grupo.js'
 export default {
     data() {
       return {
-        items: [
-          { sistema: "Recursos Humanos", grupo: "usuário"},
-          { sistema: "Transparência", grupo: "Administrador"},
-          { sistema: "Transparência", grupo: "Administrador"},
-          { sistema: "Recursos Humanos", grupo: "Administrador"}
-        ],
+        usuarioId: this.$route.params.usuarioId,
+        usuario:{},
+        grupos: [],
         fields : [
-            {key:"sistema",label:"Sistema"},
-            {key:"grupo",label:"Grupo"},
+            {key:"grupoUsuario.sistema.nome",label:"Sistema"},
+            {key:"grupoUsuario.nome",label:"Grupo"},
             {key:"Remover", label:"Remover Grupo"}
         ],
         sistema: null,
@@ -93,6 +97,17 @@ export default {
           { value: 'd', text: 'Opção inativa', disabled: true }
         ]
       }
+    },
+    created(){
+
+        console.log(this.usuarioId);
+
+          Usuarios.recuperar(this.usuarioId).then(result => {
+              this.usuario = result.data
+              Grupos.recuperar(this.usuarioId).then(result => this.grupos = result.data);
+              });
+          
+
     }
 
 }

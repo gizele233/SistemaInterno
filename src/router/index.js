@@ -22,7 +22,7 @@ const routes = [
     component: telaUsuario
   },
   {
-    path: '/editarusuario',
+    path: '/editarusuario/:usuarioId',
     name: 'usuarioEdit',
     component: usuarioEdit
   },

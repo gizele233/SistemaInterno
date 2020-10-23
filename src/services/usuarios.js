@@ -1,6 +1,12 @@
 import { http } from './config.js'
-export default{
-    listar:() => {
-        return http.get('usuario/?nome=ricardo')
+export default {
+   
+    listar:(filtro) =>{
+
+        return http.get(`usuario/?nome=${filtro.nome}&matricula=${filtro.matricula}`)
+    },
+
+    recuperar:(id) =>{
+        return http.get(`usuario/${id}`)
     }
 }
