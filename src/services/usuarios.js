@@ -6,7 +6,7 @@ export default {
         return http.get(`usuario/?nome=${filtro.nome}&matricula=${filtro.matricula}`)
     },
 
-    recuperar:(id) =>{
+    recuperarUsuarioID:(id) =>{
         return http.get(`usuario/${id}`)
     }
 }

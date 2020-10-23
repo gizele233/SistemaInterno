@@ -7,16 +7,27 @@
                 label="Nome:"
                 label-for="Nome"
             >
-       {{usuario.servidor.nome}}
             </b-form-group>
-            </b-form>
+            <b-form-group
+                label-cols-sm="0"
+                label-for="Nome"
+            >
+            {{usuario.servidor.nome}}
+            </b-form-group>
+        </b-form>
             <b-form inline class="container-info">
             <b-form-group
                 label-cols-sm="11"
+                label-for="Matrícula:"
+            >
+            <b-form-group
+                label-cols-sm="0"
                 label="Matrícula:"
                 label-for="Matrícula:"
             >
               {{usuario.matricula}}
+            
+            </b-form-group>
             
             </b-form-group>
         </b-form>
@@ -69,6 +80,7 @@
 <script>
 import Usuarios from '@/services/usuarios.js'
 import Grupos from '@/services/grupo.js'
+import Sistemas from '@/services/sistema.js'
 export default {
     data() {
       return {
@@ -99,15 +111,13 @@ export default {
       }
     },
     created(){
-
-        console.log(this.usuarioId);
-
-          Usuarios.recuperar(this.usuarioId).then(result => {
-              this.usuario = result.data
-              Grupos.recuperar(this.usuarioId).then(result => this.grupos = result.data);
-              });
-          
-
+        Usuarios.recuperarUsuarioID(this.usuarioId).then(result => {
+            this.usuario = result.data
+            Grupos.recuperarGrupo(this.usuarioId).then(result => this.grupos = result.data);
+            });
+        Sistemas.recuperarSistemas().then(result =>{
+            this.sistema = result.data
+        })
     }
 
 }
