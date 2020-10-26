@@ -92,7 +92,7 @@ Usuarios : null,
   },
   methods: {
     listar() {
-       Usuarios.listar(this.filtro).then(resposta => {
+      Usuarios.listar(this.filtro).then(resposta => {
         this.items = resposta.data;
         })
        .catch (function(error){
